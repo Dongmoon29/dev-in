@@ -9,7 +9,7 @@ const secret = config.get('jwtSecret');
 const bcrypt = require('bcryptjs');
 
 // @route   GET api/auth
-// @desc    Test route
+// @desc
 // @access  Public
 
 router.get('/', auth, async (req, res) => {
@@ -67,7 +67,6 @@ router.post(
         if (err) throw err;
         res.json({ token });
       });
-      res.send('회원가입 완료');
     } catch (err) {
       console.error(err.message);
       return res.status(500).send('Server Error');
