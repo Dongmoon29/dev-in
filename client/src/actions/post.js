@@ -96,6 +96,7 @@ export const removeLike = (id) => async (dispatch) => {
 // 게시물 삭제
 export const deletePost = (id) => async (dispatch) => {
   try {
+    await axios.delete(`/api/posts/${id}`);
     dispatch({
       type: DELETE_POST,
       payload: id,

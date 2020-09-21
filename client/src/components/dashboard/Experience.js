@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { deleteExperience } from '../../actions/profile';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
@@ -29,17 +30,23 @@ const Experience = ({ experience, deleteExperience }) => {
   return (
     <Fragment>
       <h2 className='my-2'>Experience Credencials</h2>
-      <table className='table'>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th className='hide-sm'>Company</th>
-            <th className='hide-sm'>Years</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>{experiences}</tbody>
-      </table>
+      {experience.length > 0 ? (
+        <table className='table'>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th className='hide-sm'>Company</th>
+              <th className='hide-sm'>Years</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>{experiences}</tbody>
+        </table>
+      ) : (
+        <Link to='/edit-experience'>
+          <h2>경력사항을 등록해주세요</h2>
+        </Link>
+      )}
     </Fragment>
   );
 };
