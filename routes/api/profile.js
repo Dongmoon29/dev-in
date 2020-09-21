@@ -6,6 +6,7 @@ const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
 
 // @route   GET api/profile/me
 // @desc    get current user's profile
@@ -61,6 +62,7 @@ router.post(
     } = req.body;
     // 프로필 작성
     const profileFields = {};
+    if (githubusername) profileFields.githubusername = githubusername;
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
@@ -72,10 +74,10 @@ router.post(
     // 소셜미디어 객체
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
-    if (twitter) profileFields.social.youtube = twitter;
-    if (facebook) profileFields.social.youtube = facebook;
-    if (linkedin) profileFields.social.youtube = linkedin;
-    if (instagram) profileFields.social.youtube = instagram;
+    if (twitter) profileFields.social.twitter = twitter;
+    if (facebook) profileFields.social.facebook = facebook;
+    if (linkedin) profileFields.social.linkedin = linkedin;
+    if (instagram) profileFields.social.instagram = instagram;
 
     try {
       let profile = await Profile.findOneAndUpdate(
@@ -105,7 +107,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// @route   GET api/profile/user/:user_id
+// @route   GET api/profile/users/:user_id
 // @desc    GET profile by user ID
 // @access  Public
 
@@ -130,8 +132,10 @@ router.get('/users/:user_id', async (req, res) => {
 // @desc    DELETE profile, user & posts
 // @access  Private
 
-router.delete('/delete', auth, async (req, res) => {
+router.delete('/', auth, async (req, res) => {
   try {
+    // 삭제될 유져 게시물 지우기
+    await Post.deleteMany({ user: req.user.id });
     //프로필 지우기
     await Profile.findOneAndRemove({ user: req.user.id });
     // 계정 삭제
