@@ -43,9 +43,6 @@ router.post(
   ],
   async (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
     const {
       company,
       location,
@@ -60,6 +57,10 @@ router.post(
       linkedin,
       facebook,
     } = req.body;
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
     // 프로필 작성
     const profileFields = {};
     if (githubusername) profileFields.githubusername = githubusername;
@@ -69,8 +70,15 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (skills) {
-      profileFields.skills = skills.split(',').map((skill) => skill.trim());
+      if (Array.isArray(skills)) {
+        profileFields.skills = skills;
+      } else {
+        profileFields.skills = skills
+          .split(',')
+          .map((skill) => ' ' + skill.trim());
+      }
     }
+
     // 소셜미디어 객체
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;

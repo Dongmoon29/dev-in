@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import Emoji from 'react-emoji-render';
 
 import { createProfile } from '../../actions/profile';
 
@@ -47,75 +48,71 @@ const CreateProfile = ({ createProfile, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>프로필 작성</h1>
+      <h1 className='large text-primary'>프로필</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Let's get some information to make your
-        profile stand out
+        <i className='fas fa-user'></i> 프로필 정보를 작성해주세요
       </p>
-      <small>* = required field</small>
+      <small>* = 필수 작성항목</small>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' value={status} onChange={(e) => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
-            <option value='Developer'>Developer</option>
-            <option value='Junior Developer'>Junior Developer</option>
-            <option value='Senior Developer'>Senior Developer</option>
-            <option value='Manager'>Manager</option>
-            <option value='Student or Learning'>Student or Learning</option>
-            <option value='Instructor'>Instructor or Teacher</option>
-            <option value='Intern'>Intern</option>
-            <option value='Other'>Other</option>
+            <option value='0'>자신의 포지션을 선택해주세요</option>
+            <option value='개발자'>개발자</option>
+            <option value='쥬니어 개발자'>쥬니어 개발자</option>
+            <option value='시니어 개발자'>시니어 개발자</option>
+            <option value='매니져'>매니져</option>
+            <option value='학생 or 취준생'>학생 or 취준생</option>
+            <option value='강사'>강사</option>
+            <option value='인턴'>인턴</option>
+            <option value='Etc'>Etc</option>
           </select>
-          <small className='form-text'>
-            Give us an idea of where you are at in your career
-          </small>
+          <small className='form-text'>자신의 포지션을 선택해주세요</small>
         </div>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Company'
+            placeholder='직장'
             name='company'
             value={company}
             onChange={(e) => onChange(e)}
           />
-          <small className='form-text'>
-            Could be your own company or one you work for
-          </small>
+          <small className='form-text'>직장/학교/학원을 작성해주세요</small>
         </div>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Website'
+            placeholder='웹사이트'
             name='website'
             value={website}
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            Could be your own or a company website
+            직장이나 개인 웹사이트를 적어주세요
           </small>
         </div>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Location'
+            placeholder='주소'
             name='location'
             value={location}
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            City & state suggested (eg. Boston, MA)
+            주소를 간략히 적어주세요 (ex: 서울, 부산, 경기....)
           </small>
         </div>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Skills'
+            placeholder='* 보유기술'
             name='skills'
             value={skills}
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            기술명 각각을 쉼표로 나누어 작성해주세요 (ex.
+            HTML,CSS,JavaScript,PHP)
           </small>
         </div>
         <div className='form-group'>
@@ -127,8 +124,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            If you want your latest repos and a Github link, include your
-            username
+            Github repo들을 공유하고 싶으시면 Github username을 적어주세요
           </small>
         </div>
         <div className='form-group'>
@@ -137,7 +133,7 @@ const CreateProfile = ({ createProfile, history }) => {
             name='bio'
             value={bio}
             onChange={(e) => onChange(e)}></textarea>
-          <small className='form-text'>Tell us a little about yourself</small>
+          <small className='form-text'>간단한 자기소개글을 작성해주세요</small>
         </div>
 
         <div className='my-2'>
@@ -145,7 +141,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type='button'
             className='btn btn-light'>
-            Add Social Network Links
+            <Emoji text='공유하고 싶으신 📷SNS가 있으신가요?' />
           </button>
           <span>Optional</span>
         </div>
@@ -209,9 +205,9 @@ const CreateProfile = ({ createProfile, history }) => {
           </Fragment>
         )}
 
-        <input type='submit' className='btn btn-primary my-1' />
+        <input type='submit' className='btn btn-primary my-1' value='확인' />
         <Link className='btn btn-light my-1' to='/dashboard'>
-          Go Back
+          뒤로
         </Link>
       </form>
     </Fragment>

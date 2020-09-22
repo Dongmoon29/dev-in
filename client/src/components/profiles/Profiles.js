@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Emoji from 'react-emoji-render';
 
 import { getProfiles } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
@@ -18,7 +19,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Fragment>
           <h1 className='large text-primary'>Devs</h1>
           <p className='lead'>
-            <span>🌍🧑👧 훌륭한 개발자분들을 찾아보세요</span>
+            <Emoji text='🌍🧑👧 훌륭한 개발자분들을 찾아보세요' />
           </p>
           <div className='profiles'>
             {profiles.length > 0 ? (

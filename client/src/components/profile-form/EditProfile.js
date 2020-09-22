@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import Emoji from 'react-emoji-render';
 
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
@@ -126,7 +127,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            도시를 적어주세요 (ex: 서울, 부산, 경기....)
+            주소를 간략히 적어주세요 (ex: 서울, 부산, 경기....)
           </small>
         </div>
         <div className='form-group'>
@@ -160,7 +161,7 @@ const EditProfile = ({
             name='bio'
             value={bio}
             onChange={(e) => onChange(e)}></textarea>
-          <small className='form-text'>간단한 자기소개글을 작성해주세요.</small>
+          <small className='form-text'>간단한 자기소개글을 작성해주세요</small>
         </div>
 
         <div className='my-2'>
@@ -168,7 +169,7 @@ const EditProfile = ({
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type='button'
             className='btn btn-light'>
-            공유하고 싶으신 <span>📷</span>SNS가 있으신가요?
+            <Emoji text='공유하고 싶으신 📷SNS가 있으신가요?' />
           </button>
           <span>(선택사항)</span>
         </div>

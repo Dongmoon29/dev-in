@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Emoji from 'react-emoji-render';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,22 +10,22 @@ function Navbar({ logout, auth: { isAuthenticated, loading } }) {
     <ul>
       <li>
         <Link to='/profiles'>
-          <span>👩🏻🧑🏻</span>Devs
+          <Emoji text='👩🏻🧑🏻Devs' />
         </Link>
       </li>
       <li>
         <Link to='/posts'>
-          <span>📚</span>게시물
+          <Emoji text='📚게시물' />
         </Link>
       </li>
       <li>
         <Link to='/dashboard'>
-          <span>👤</span>내정보
+          <Emoji text='👤내정보' />
         </Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
-          <span>👋</span>로그아웃
+          <Emoji text='👋로그아웃' />
         </a>
       </li>
     </ul>
@@ -34,17 +35,17 @@ function Navbar({ logout, auth: { isAuthenticated, loading } }) {
     <ul>
       <li>
         <Link to='/profiles'>
-          <span>👩🏻🧑🏻</span>Devs
+          <Emoji text='👩🏻🧑🏻Devs' />
         </Link>
       </li>
       <li>
         <Link to='/register'>
-          <span>👐</span>회원가입
+          <Emoji text='👐회원가입' />
         </Link>
       </li>
       <li>
         <Link to='/login'>
-          <span>🚪</span>로그인
+          <Emoji text='🚪로그인' />
         </Link>
       </li>
     </ul>
