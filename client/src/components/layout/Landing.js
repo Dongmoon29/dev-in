@@ -11,17 +11,16 @@ function Landing({ isAuthenticated }) {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1 className='x-large'>Developer Connector</h1>
+          <h1 className='x-large'>Dev-In</h1>
           <p className='lead'>
-            Create a developer profile/portfolio, share posts and get help from
-            other developers
+            Dev-In은 개발자들분들과 소통하기 위해 만들어진 Sns입니다.
           </p>
           <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
-              Sign Up
+              회원가입
             </Link>
             <Link to='/login' className='btn btn-light'>
-              Login
+              로그인
             </Link>
           </div>
         </div>

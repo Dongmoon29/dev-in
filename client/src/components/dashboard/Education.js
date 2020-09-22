@@ -21,21 +21,21 @@ const Education = ({ education, deleteEducation }) => {
         <button
           className='btn btn-danger'
           onClick={() => deleteEducation(edu._id)}>
-          Delete
+          삭제
         </button>
       </td>
     </tr>
   ));
   return (
     <Fragment>
-      <h2 className='my-2'>Education Credencials</h2>
+      <h2 className='my-2'>학력사항</h2>
       {education.length > 0 ? (
         <table className='table'>
           <thead>
             <tr>
-              <th>School</th>
-              <th className='hide-sm'>Degree</th>
-              <th className='hide-sm'>Years</th>
+              <th>학교/학원</th>
+              <th className='hide-sm'>학위</th>
+              <th className='hide-sm'>기간</th>
               <th></th>
             </tr>
           </thead>
@@ -43,7 +43,7 @@ const Education = ({ education, deleteEducation }) => {
         </table>
       ) : (
         <Link to='/edit-education'>
-          <h2>학력정보를 등록해주세요</h2>
+          <button className='btn btn-skyblue'>학력정보를 등록해주세요</button>
         </Link>
       )}
     </Fragment>

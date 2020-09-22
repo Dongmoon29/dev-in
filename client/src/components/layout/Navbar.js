@@ -8,21 +8,23 @@ function Navbar({ logout, auth: { isAuthenticated, loading } }) {
   const authLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/profiles'>
+          <span>👩🏻🧑🏻</span>Devs
+        </Link>
       </li>
       <li>
-        <Link to='/posts'>Posts</Link>
+        <Link to='/posts'>
+          <span>📚</span>게시물
+        </Link>
       </li>
       <li>
         <Link to='/dashboard'>
-          <i className='fas fa-user' />{' '}
-          <span className='hide-sm'>Dashboard</span>
+          <span>👤</span>내정보
         </Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
-          <i className='fas fa-sign-out-alt'></i>
-          <span className='hide-sm'>Logout</span>
+          <span>👋</span>로그아웃
         </a>
       </li>
     </ul>
@@ -31,13 +33,19 @@ function Navbar({ logout, auth: { isAuthenticated, loading } }) {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/profiles'>
+          <span>👩🏻🧑🏻</span>Devs
+        </Link>
       </li>
       <li>
-        <Link to='/register'>Register</Link>
+        <Link to='/register'>
+          <span>👐</span>회원가입
+        </Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
+        <Link to='/login'>
+          <span>🚪</span>로그인
+        </Link>
       </li>
     </ul>
   );

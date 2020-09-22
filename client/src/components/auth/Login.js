@@ -23,16 +23,16 @@ const Login = ({ login, isAuthenticated }) => {
     return <Redirect to='/dashboard' />;
   }
   return (
-    <Fragment>
-      <h1 className='large text-primary'>Sign In</h1>
+    <div style={{ width: '50%' }}>
+      <h1 className='large text-primary'>로그인</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Sign In to your account
+        <i className='fas fa-user'></i> 계정에 로그인하세요
       </p>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <input
             type='email'
-            placeholder='Email Address'
+            placeholder='이메일'
             name='email'
             value={email}
             onChange={(e) => onChange(e)}
@@ -42,7 +42,7 @@ const Login = ({ login, isAuthenticated }) => {
         <div className='form-group'>
           <input
             type='password'
-            placeholder='Password'
+            placeholder='비밀번호'
             name='password'
             minLength='6'
             value={password}
@@ -53,9 +53,9 @@ const Login = ({ login, isAuthenticated }) => {
         <input type='submit' className='btn btn-primary' value='Login' />
       </form>
       <p className='my-1'>
-        Don't have an account? <Link to='/register'>Sign Up</Link>
+        계정이 없으신가요? <Link to='/register'>회원 가입하기</Link>
       </p>
-    </Fragment>
+    </div>
   );
 };
 Login.propTypes = {

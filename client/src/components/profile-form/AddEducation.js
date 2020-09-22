@@ -31,17 +31,18 @@ const AddEducation = ({ addEducation, history }) => {
     addEducation(formData, history);
   };
   return (
-    <Fragment>
-      <h1 className='large text-primary'>Add Your Education</h1>
+    <div style={{ width: '80%' }}>
+      <h1 className='large text-primary'>학력 추가하기 </h1>
       <p className='lead'>
-        <i className='fas fa-code-branch'></i> Add study, bootcamp etc...
+        <i className='fas fa-code-branch'></i> 프로그래밍과 관련해 학교, 학원등
+        받은 교육이 있다면 적어주세요
       </p>
-      <small>* = required field</small>
+      <small>* = 필수 작성항목</small>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* School Title'
+            placeholder='* 학교'
             name='school'
             value={school}
             onChange={(e) => onChange(e)}
@@ -51,7 +52,7 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Degree'
+            placeholder='* 학위'
             name='degree'
             value={degree}
             onChange={(e) => onChange(e)}
@@ -61,14 +62,14 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Major'
+            placeholder='전공'
             name='fieldofstudy'
             value={fieldofstudy}
             onChange={(e) => onChange(e)}
           />
         </div>
         <div className='form-group'>
-          <h4>From Date</h4>
+          <h4>시작 날짜</h4>
           <input
             type='date'
             name='from'
@@ -88,11 +89,11 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current Education
+            현재 받고 계신 교육인가요?
           </p>
         </div>
         <div className='form-group'>
-          <h4>To Date</h4>
+          <h4>종료 날짜</h4>
           <input
             type='date'
             name='to'
@@ -106,16 +107,16 @@ const AddEducation = ({ addEducation, history }) => {
             name='description'
             cols='30'
             rows='5'
-            placeholder='Education Description'
+            placeholder='받으신 교육에 대해 짧은 소개글을 작성해주세요'
             value={description}
             onChange={(e) => onChange(e)}></textarea>
         </div>
-        <input type='submit' className='btn btn-primary my-1' />
+        <input type='submit' className='btn btn-primary my-1' value='확인' />
         <Link className='btn btn-light my-1' to='/dashboard'>
-          Go Back
+          뒤로
         </Link>
       </form>
-    </Fragment>
+    </div>
   );
 };
 

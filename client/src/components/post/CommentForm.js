@@ -7,8 +7,10 @@ const CommentForm = ({ postId, addComment }) => {
   const [text, setText] = useState('');
   return (
     <div class='post-form'>
-      <div class='bg-primary p'>
-        <h3>Leave a Comment...</h3>
+      <div
+        class='bg-white p'
+        style={{ border: 'none', borderBottom: '1px solid black' }}>
+        <h3>댓글</h3>
       </div>
       <form
         class='form my-1'
@@ -21,11 +23,11 @@ const CommentForm = ({ postId, addComment }) => {
           name='text'
           cols='30'
           rows='5'
-          placeholder='Comment on this post'
+          placeholder='이 게시물에 댓글 달기'
           value={text}
           onChange={(e) => setText(e.target.value)}
           required></textarea>
-        <input type='submit' class='btn btn-dark my-1' value='Submit' />
+        <input type='submit' class='btn btn-dark my-1' value='확인' />
       </form>
     </div>
   );

@@ -6,9 +6,11 @@ import { addPost } from '../../actions/post';
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState('');
   return (
-    <div className='post-form'>
-      <div className='bg-primary p'>
-        <h3>Say something...</h3>
+    <div className='post-form' style={{ width: '80%' }}>
+      <div
+        className='bg-white p'
+        style={{ border: 'none', borderBottom: '1px solid black' }}>
+        <h3>게시물 작성</h3>
       </div>
       <form
         className='form my-1'
@@ -21,11 +23,11 @@ const PostForm = ({ addPost }) => {
           name='text'
           cols='30'
           rows='5'
-          placeholder='Comment on this post'
+          placeholder='작성하실 게시물'
           value={text}
           onChange={(e) => setText(e.target.value)}
           required></textarea>
-        <input type='submit' className='btn btn-dark my-1' value='Submit' />
+        <input type='submit' className='btn btn-dark my-1' value='확인' />
       </form>
     </div>
   );

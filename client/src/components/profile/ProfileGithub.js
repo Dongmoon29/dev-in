@@ -10,12 +10,18 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   }, [getGithubRepos, username]);
   return (
     <div className='profile-github'>
-      <h2 className='text-primary my-1'>Github Repos</h2>
+      <h2 className='text-primary my-1'>
+        <i className='fab fa-github'></i>
+        <span>깃헙</span>
+      </h2>
       {repos === null ? (
         <Spinner />
       ) : (
         repos.map((repo) => (
-          <div key={repo._id} className='repo bg-white p-1 my-1'>
+          <div
+            key={repo._id}
+            className='repo bg-white p-1 my-1'
+            style={{ width: '50%' }}>
             <div>
               <h4>
                 <a
@@ -28,9 +34,9 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
               <p>{repo.description}</p>
             </div>
             <div>
-              <ul>
+              <ul style={{ display: 'flex' }}>
                 <li className='badge badge-primary'>
-                  Stars: {repo.stargazzers_count}
+                  Stars: {repo.stargazers_count}
                 </li>
                 <li className='badge badge-dark'>
                   Watchers: {repo.watchers_count}

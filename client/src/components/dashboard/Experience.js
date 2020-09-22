@@ -22,21 +22,21 @@ const Experience = ({ experience, deleteExperience }) => {
         <button
           className='btn btn-danger'
           onClick={() => deleteExperience(exp._id)}>
-          Delete
+          삭제
         </button>
       </td>
     </tr>
   ));
   return (
     <Fragment>
-      <h2 className='my-2'>Experience Credencials</h2>
+      <h2 className='my-2'>경력사항</h2>
       {experience.length > 0 ? (
         <table className='table'>
           <thead>
             <tr>
-              <th>Title</th>
-              <th className='hide-sm'>Company</th>
-              <th className='hide-sm'>Years</th>
+              <th>직장</th>
+              <th className='hide-sm'>직책</th>
+              <th className='hide-sm'>근무년도</th>
               <th></th>
             </tr>
           </thead>
@@ -44,7 +44,7 @@ const Experience = ({ experience, deleteExperience }) => {
         </table>
       ) : (
         <Link to='/edit-experience'>
-          <h2>경력사항을 등록해주세요</h2>
+          <button className='btn btn-skyblue'>경력사항을 등록해주세요</button>
         </Link>
       )}
     </Fragment>

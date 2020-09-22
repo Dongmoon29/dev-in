@@ -12,12 +12,23 @@ const ProfileItem = ({
   },
 }) => {
   return (
-    <div className='profile bg-light'>
-      <img src={avatar} alt='avatar' className='round-img' />
+    <div className='profile bg-light' style={{ width: '80%' }}>
+      <img
+        src={avatar}
+        alt='avatar'
+        className='round-img'
+        style={{ width: '130px' }}
+      />
       <div>
         <h2>{name}</h2>
         <p>
-          {status} {company && <span> at {company}</span>}
+          {status}{' '}
+          {company && (
+            <span>
+              {' '}
+              at <strong>{company}</strong>
+            </span>
+          )}
         </p>
         <p className='my-1'>{location && <span>{location}</span>}</p>
         <Link to={`/profile/${_id}`} className='btn btn-primary'>

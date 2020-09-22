@@ -13,20 +13,20 @@ const ProfileEducation = ({
         {!to ? 'Now' : <Moment format='YYYY-MM-DD'>{to}</Moment>}
       </p>
       <p>
-        <strong>Degree: </strong> {degree}
+        <strong>학위: </strong> {degree}
       </p>
       <p>
-        <strong>Major: </strong> {fieldofstudy}
+        <strong>전공: </strong> {fieldofstudy}
       </p>
       <p>
-        <strong>Description: </strong> {description}
+        <strong>소개글: </strong> {description}
       </p>
     </div>
   );
 };
 
 ProfileEducation.propTypes = {
-  education: PropTypes.array.isRequired,
+  education: PropTypes.object.isRequired,
 };
 
 export default ProfileEducation;

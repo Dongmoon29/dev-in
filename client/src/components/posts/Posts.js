@@ -15,16 +15,13 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large'>Posts</h1>
-      <p className='lead'>
-        <i className='fas fa-user'></i> Welcome
-      </p>
-      <PostForm />
+      <h1 className='large'>게시물</h1>
       <div className='posts'>
         {posts.map((post) => (
           <PostItem key={post._id} post={post} />
         ))}
       </div>
+      <PostForm />
     </Fragment>
   );
 };
