@@ -1,6 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://admin-kdm:test123@dev-in.ezgkq.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "mysecret",
-    "githubToken": "4265d8809bda52390a9333fdb5ee611ea9c3a6ff"
-  }
-  
