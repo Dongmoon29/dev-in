@@ -1,2 +1,2 @@
 # dev-in
-https://dashboard.heroku.com/apps/blooming-lowlands-48368/settings
+https://blooming-lowlands-48368.herokuapp.com/
