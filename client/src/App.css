@@ -525,6 +525,9 @@ button {
   body {
     font-size: 0.8rem;
   }
+  .m1-sm {
+    margin: 1rem, 0;
+  }
   .container {
     margin-top: 8rem;
   }

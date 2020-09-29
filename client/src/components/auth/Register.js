@@ -31,7 +31,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <div style={{ width: '50%' }}>
-      <h1 className='large text-primary'>회원가입</h1>
+      <h1 className='large text-primary m1-sm'>회원가입</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> 계정 만들기
       </p>

@@ -17,7 +17,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className='large text-primary'>Devs</h1>
+          <h1 className='large text-primary m1-sm'>Devs</h1>
           <p className='lead'>
             <Emoji text='🌍🧑👧 훌륭한 개발자분들을 찾아보세요' />
           </p>

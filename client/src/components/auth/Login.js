@@ -24,7 +24,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <div style={{ width: '50%' }}>
-      <h1 className='large text-primary'>로그인</h1>
+      <h1 className='large text-primary m1-sm'>로그인</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> 계정에 로그인하세요
       </p>
